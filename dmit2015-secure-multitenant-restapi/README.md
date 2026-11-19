@@ -97,21 +97,29 @@ For a **create** operation there is no existing record to compare; the server as
 
 When a valid JWT lacks the required role or ownership permission, the API should return `403 Forbidden` for the denied scenarios in this demo.
 
-## Running the Project
+## REST API Endpoint
 
-Start the configured OpenID Connect identity provider, then from this project folder run:
+The REST API uses:
+
+- **Port:** `8091`
+- **Application path:** `/restapi`
+- **Resource path:** `/todos`
+
+Base resource URL (when deployed at the root context):
+
+```text
+http://localhost:8091/restapi/todos
+```
+
+The application deployment context path may add another URL segment.
+
+Run the application using:
 
 ```bash
 mvn wildfly:dev
 ```
 
-Default API port:
-
-```text
-http://localhost:8091
-```
-
-The full REST endpoint URL depends on the application's deployment context path. Consult the source code and runtime configuration. Press `Ctrl+C` to stop WildFly.
+Press `Ctrl+C` to stop WildFly.
 
 ## What to Observe During the Demo
 

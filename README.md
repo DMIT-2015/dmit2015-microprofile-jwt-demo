@@ -14,11 +14,11 @@ These are teaching examples. The emphasis is on understanding and testing securi
 
 ## Projects
 
-| Project | Resource | Focus | Default port |
-|---|---|---|---:|
-| [`dmit2015-secure-rbac-restapi`](dmit2015-secure-rbac-restapi/) | `Student` | JWT authentication and `@RolesAllowed` | `8090` |
-| [`dmit2015-secure-multitenant-restapi`](dmit2015-secure-multitenant-restapi/) | `TodoItem` | JWT-derived ownership and tenant isolation | `8091` |
-| [`dmit2015-secure-restclient`](dmit2015-secure-restclient/) | Client for both APIs | Login, bearer-token propagation, `401`/`403`, and logout | See client configuration |
+| Project                               | Base URL                                 | Focus                                                 |
+| ------------------------------------- | ---------------------------------------- | ----------------------------------------------------- |
+| `dmit2015-secure-rbac-restapi`        | `http://localhost:8090/restapi/students` | JWT authentication and RBAC                           |
+| `dmit2015-secure-multitenant-restapi` | `http://localhost:8091/restapi/todos`    | JWT-derived ownership and multitenancy                |
+| `dmit2015-secure-restclient`          | `http://localhost:8080`                  | Authentication, token propagation, and error handling |
 
 Each project has its own README with learning objectives, role rules, and run/test guidance.
 

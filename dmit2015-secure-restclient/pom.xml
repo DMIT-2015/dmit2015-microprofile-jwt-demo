@@ -184,57 +184,18 @@
                     <name>ROOT.war</name>
 
                     <!--
-                        Debugging WildFly from IntelliJ IDEA
+                        Debugging WildFly from IntelliJ IDEA:
 
-                        WildFly Maven Plugin default debug port:
-                            8787
+                        1. Open Run | Edit Configurations.
+                        2. Add a Remote JVM Debug configuration.
+                        3. Set:
+                               Host: localhost
+                               Port: 8787
+                        4. Start WildFly with mvn wildfly:dev.
+                        5. Start the Remote JVM Debug configuration in IntelliJ.
 
-                        IntelliJ IDEA's "Remote JVM Debug" run configuration often defaults to:
-                            5005
-
-                        The port is not special, but both sides must match:
-                            - WildFly must start with the selected debug port.
-                            - IntelliJ IDEA must attach using the same port.
-
-                        Current IntelliJ IDEA workflow:
-                            1. Open:
-                                   Run | Edit Configurations
-
-                            2. Click + and add a new run configuration:
-                                   Remote JVM Debug
-
-                            3. Configure:
-                                   Name: Debug WildFly
-                                   Host: localhost
-                                   Port: 8787
-
-                               Important:
-                                   IntelliJ may default the port to 5005.
-                                   Change it to 8787 unless you also changed the WildFly debug port.
-
-                            4. Start WildFly with debugging enabled.
-
-                            5. In IntelliJ IDEA, select the Remote JVM Debug run configuration.
-
-                            6. Start the debugger using:
-                                   Debug 'Debug WildFly'  (Shift+F9)
-
-                        Running multiple WildFly projects at the same time:
-                            Each running WildFly server must use a different debug port.
-
-                            Example:
-                                Project 1: 8787
-                                Project 2: 8788
-                                Project 3: 8789
-
-                            If you change the WildFly debug port, also create or update the matching
-                            IntelliJ IDEA "Remote JVM Debug" run configuration to use the same port.
-
-                        Example Maven plugin debug configuration:
-                            <debugPort>8787</debugPort>
-
-                        Example for a second WildFly project:
-                            <debugPort>8788</debugPort>
+                        IntelliJ may default to port 5005. Change it to 8787 so it
+                        matches the WildFly debug port.
                     -->
                     <debug>true</debug>
                     <debugPort>8787</debugPort>
